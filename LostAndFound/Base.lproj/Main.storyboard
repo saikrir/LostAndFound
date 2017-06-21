@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,89 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="flL-eU-kID" userLabel="VerticalLayout">
+                                <rect key="frame" x="16" y="84" width="343" height="345"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bluetooth.svg" translatesAutoresizingMaskIntoConstraints="NO" id="KTB-2n-mrq">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="9Ch-AU-BN4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="E5c-Bf-NgW" userLabel="LabelsStackVw">
+                                        <rect key="frame" x="0.0" y="160" width="343" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Device Status:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jks-3D-sIk">
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="33"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asj-rI-dfJ">
+                                                <rect key="frame" x="174" y="0.0" width="169" height="33"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5N-uM-iBT">
+                                        <rect key="frame" x="0.0" y="225" width="343" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="4Et-YE-XSc"/>
+                                        </constraints>
+                                        <state key="normal" title="Give it a Ring">
+                                            <color key="titleColor" red="1" green="0.42690367489999997" blue="0.35258722139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ringButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SAg-W6-2PI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Om1-Bj-Adh">
+                                        <rect key="frame" x="0.0" y="301" width="343" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Stop Ringing">
+                                            <color key="titleColor" red="1" green="0.42690367489999997" blue="0.35258722139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ringButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ye2-bS-jsP"/>
+                                            <action selector="stopRinging:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a3D-dD-P3B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="n5N-uM-iBT" firstAttribute="height" secondItem="Om1-Bj-Adh" secondAttribute="height" id="e8r-TB-hQb"/>
+                                </constraints>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TzI-5N-AtE">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="lightTextColor"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.42690367494553261" blue="0.35258722140780441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="flL-eU-kID" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3Ad-vg-xnV"/>
+                            <constraint firstItem="TzI-5N-AtE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6aE-YZ-lvY"/>
+                            <constraint firstItem="TzI-5N-AtE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8zL-ny-acE"/>
+                            <constraint firstItem="flL-eU-kID" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="ZqQ-Nq-krq"/>
+                            <constraint firstItem="flL-eU-kID" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t9J-Nt-Pfj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="flL-eU-kID" secondAttribute="trailing" id="yN2-tx-g5M"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="TzI-5N-AtE" id="YWT-Hz-ZoN"/>
+                        <outlet property="lblConnectionStatus" destination="asj-rI-dfJ" id="uS1-Vr-xRW"/>
+                        <outlet property="stopButton" destination="Om1-Bj-Adh" id="QNL-bJ-7Lh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-127.2" y="68.815592203898049"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bluetooth.svg" width="2000" height="3051"/>
+    </resources>
 </document>
